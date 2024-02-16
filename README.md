@@ -1,1 +1,1 @@
-# ExtranetStaticPages
+# Extranet Static Pages
