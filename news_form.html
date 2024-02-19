@@ -112,7 +112,7 @@
     </form>
 
     <!-- Categories -->
-    <div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5 invisible" tabindex="-1" role="dialog" id="modalSheet">
+    <div class="modal modal-sheet d-block bg-body-secondary p-4 py-md-5 invisible" tabindex="-1" role="dialog" id="modalSheet">
         <div class="modal-dialog" role="document">
             <div class="modal-content rounded-4 shadow">
                 <div class="modal-header border-bottom-0">
@@ -163,10 +163,11 @@
         });
 
         $('#addCategoryButton').click(function(){
-            if(document.getElementById('modalSheet').classList.contains('invisible')) 
-                document.getElementById('modalSheet').classList.remove('invisible'); 
+            const modalSheet = document.getElementById('modalSheet')
+            if(modalSheet.classList.contains('invisible'))
+                modalSheet.classList.remove('invisible');
             else 
-                document.getElementById('modalSheet').classList.add('invisible');
+                modalSheet.classList.add('invisible');
         });
 
         $('#modalClose').click(function(){
