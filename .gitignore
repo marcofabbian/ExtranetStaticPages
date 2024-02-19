@@ -1,0 +1,17 @@
+# misc
+.DS_Store
+**node_modules
+temp-**
+**.tmp.**
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+**/coverage/**
+
+### IntelliJ ###
+.idea/*
