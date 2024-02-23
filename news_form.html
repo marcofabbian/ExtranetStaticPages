@@ -195,7 +195,7 @@
 
         <div class="mb-3 mt-3">
             <label for="dateDatepicker">Date</label>
-            <input type="text" class="form-control" id="dateDatepicker" aria-describedby="dateNewsHelp" placeholder="Select the news date">
+            <input type="text" class="form-control" id="dateDatepicker" aria-describedby="dateNewsHelp" placeholder="Select the news date" readonly="readonly">
             <small id="dateNewsHelp" class="form-text text-muted">Select the news date.This field is mandatory.</small>
         </div>
 
@@ -206,20 +206,22 @@
 
         <div class="mb-3 mt-3">
             <div>
-                <label for="publishCheckbox">Schedule publication.</label>
-                <input type="checkbox" class="form-check-input" id="publishCheckbox">
+                <label for="scheduleCheckbox">Schedule publication.</label>
+                <input type="checkbox" class="form-check-input" id="scheduleCheckbox">
             </div>
 
-            <div>
-                <label for="fromDateDatepicker">From Datetime</label>
-                <input type="text" class="form-control" id="fromDateDatepicker" aria-describedby="fromDateNewsHelp" placeholder="Select the news date">
-                <small id="fromDateNewsHelp" class="form-text text-muted">Select from date. This field is mandatory.</small>
-            </div>
+            <div id="dateFields" class="invisible">
+                <div>
+                    <label for="fromDateDatepicker">From Datetime</label>
+                    <input type="text" class="form-control" id="fromDateDatepicker" aria-describedby="fromDateNewsHelp" placeholder="Select the news date" readonly="readonly">
+                    <small id="fromDateNewsHelp" class="form-text text-muted">Select from date. This field is mandatory.</small>
+                </div>
 
-            <div>
-                <label for="toDateDatepicker">To Datetime</label>
-                <input type="text" class="form-control" id="toDateDatepicker" aria-describedby="toDateNewsHelp" placeholder="Select the news date">
-                <small id="toDateNewsHelp" class="form-text text-muted">Select to date. This field is mandatory.</small>
+                <div>
+                    <label for="toDateDatepicker">To Datetime</label>
+                    <input type="text" class="form-control" id="toDateDatepicker" aria-describedby="toDateNewsHelp" placeholder="Select the news date" readonly="readonly">
+                    <small id="toDateNewsHelp" class="form-text text-muted">Select to date. This field is mandatory.</small>
+                </div>
             </div>
         </div>
 
@@ -371,6 +373,17 @@
             else 
                 modal.classList.add('invisible');
         });
+
+        //Schedulation
+        $('#scheduleCheckbox').click(function(){
+            const datePanel = document.getElementById('dateFields')
+            //console.log($('#scheduleCheckbox').is(':checked'))
+            if($('#scheduleCheckbox').is(':checked'))
+                datePanel.classList.remove('invisible')
+            else
+                datePanel.classList.add('invisible')
+        }); 
+        
 
         
         //Categories
